@@ -7,9 +7,8 @@ package team.gif.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import team.gif.lib.logging.EventFileLogger;
-import team.gif.lib.logging.TelemetryFileLogger;
 import team.gif.robot.subsystems.drivers.Pigeon;
+import team.gif.robot.subsystems.LimitSwitch;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -21,6 +20,8 @@ public class Robot extends TimedRobot {
   private static Command autonomousCommand;
   private RobotContainer robotContainer;
   public static OI oi;
+
+  public static LimitSwitch limitSwitch;
 
   public static Pigeon pigeon;
 
@@ -37,6 +38,8 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     robotContainer = new RobotContainer();
+
+    limitSwitch = new LimitSwitch();
 
     //These should be at or near the bottom
     oi = new OI();
@@ -60,6 +63,8 @@ public class Robot extends TimedRobot {
     CommandScheduler.getInstance().run();
 
     ui.update();
+
+    System.out.println(limitSwitch.getlimitSwitchinput());
 
   }
 
