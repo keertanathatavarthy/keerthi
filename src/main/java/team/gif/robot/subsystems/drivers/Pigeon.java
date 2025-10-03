@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 
 public class Pigeon {
 
-    public static PigeonIMU _pigeon;
+    public static PigeonIMU_pigeon;
 
     private final PigeonIMU.GeneralStatus _pigeonGenStatus = new PigeonIMU.GeneralStatus();
 
