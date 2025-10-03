@@ -41,7 +41,7 @@ public class Robot extends TimedRobot {
 
     limitSwitch = new LimitSwitch();
 
-    pigeon = new Pigeon(5);
+    pigeon = new Pigeon(RobotMap.PIGEON_ID);
 
     //These should be at or near the bottom
     oi = new OI();
