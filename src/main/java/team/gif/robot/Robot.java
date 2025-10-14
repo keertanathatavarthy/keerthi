@@ -7,6 +7,7 @@ package team.gif.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import team.gif.robot.subsystems.Talon;
 import team.gif.robot.subsystems.drivers.Pigeon;
 import team.gif.robot.subsystems.LimitSwitch;
 
@@ -24,8 +25,10 @@ public class Robot extends TimedRobot {
   public static LimitSwitch limitSwitch;
 
   public static Pigeon pigeon;
+  public static Talon talon;
 
   public static UI ui;
+
 
   public static final boolean enableSwerveDebug = false;
 
@@ -43,6 +46,7 @@ public class Robot extends TimedRobot {
 
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
 
+    talon = new Talon();
     //These should be at or near the bottom
     oi = new OI();
     ui = new UI();
@@ -67,7 +71,7 @@ public class Robot extends TimedRobot {
 
     ui.update();
 
-    System.out.println(limitSwitch.getlimitSwitchinput());
+    System.out.println(limitSwitch.getLimitSwitchInput());
 
   }
 

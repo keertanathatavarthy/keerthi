@@ -12,7 +12,7 @@ public class LimitSwitch {
         limitSwitch = new DigitalInput(RobotMap.LIMIT_SWITCH_ID);
     }
 
-    public boolean getlimitSwitchinput() {
+    public boolean getLimitSwitchInput() {
         return limitSwitch.get();
     }
 }

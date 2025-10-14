@@ -1,10 +1,10 @@
 package team.gif.robot;
 
-import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj2.command.PrintCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import team.gif.robot.commands.GetFPGATimeStamp;
+import team.gif.robot.commands.TalonMotorSpinBackwards;
+import team.gif.robot.commands.TalonMotorSpinForwards;
 
 public class OI {
     /*
@@ -91,6 +91,9 @@ public class OI {
          */
 
         dA.onTrue(new GetFPGATimeStamp());
+        dB.whileTrue(new TalonMotorSpinBackwards());
+        dX.whileTrue(new TalonMotorSpinForwards());
+
 
     }
 }
