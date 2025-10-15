@@ -19,7 +19,7 @@ public class TalonMotorSpinForwards extends Command {
 
     // Called every time the scheduler runs (~20ms) while the command is scheduled
     @Override
-    public void execute() {Robot.talon.turnMotor(Constants.CIM_MOTOR_PERCENT);
+    public void execute() {Robot.talon.turnMotor(Constants.TALON_MOTOR_PERCENT);
     }
 
     // Return true when the command should end, false if it should continue. Runs every ~20ms.
