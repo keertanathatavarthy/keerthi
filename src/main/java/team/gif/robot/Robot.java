@@ -53,7 +53,7 @@ public class Robot extends TimedRobot {
     sparkMAX = new SparkMAXMotorControl();
 
     talon = new Talon();
-    talon.setDefaultCommand(new JoystickMotorControl();
+    talon.setDefaultCommand(new JoystickMotorControl());
 
     //These should be at or near the bottom
     oi = new OI();
