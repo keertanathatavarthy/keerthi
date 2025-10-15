@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.robot.commands.JoystickMotorControl;
+import team.gif.robot.subsystems.SparkMAXMotorControl;
 import team.gif.robot.subsystems.Talon;
 import team.gif.robot.subsystems.drivers.Pigeon;
 import team.gif.robot.subsystems.LimitSwitch;
@@ -30,6 +31,8 @@ public class Robot extends TimedRobot {
 
   public static UI ui;
 
+  public static SparkMAXMotorControl sparkMAX;
+
 
   public static final boolean enableSwerveDebug = false;
 
@@ -46,6 +49,8 @@ public class Robot extends TimedRobot {
     limitSwitch = new LimitSwitch();
 
     pigeon = new Pigeon(RobotMap.PIGEON_ID);
+
+    sparkMAX = new SparkMAXMotorControl();
 
     talon = new Talon();
     talon.setDefaultCommand(new JoystickMotorControl();
