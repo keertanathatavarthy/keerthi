@@ -1,5 +1,7 @@
 package team.gif.robot;
 
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class UI {
@@ -13,7 +15,9 @@ public class UI {
      *  and save file as "YYYY elastic-layout.json"
      */
     public UI() {
-        
+        ShuffleboardTab tab = Shuffleboard.getTab("BAB-2025");
+        tab.addBoolean("LS State", Robot.limitSwitch::getLimitSwitchInput);
+
     }
 
     /**

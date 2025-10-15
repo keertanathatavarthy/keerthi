@@ -8,6 +8,7 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import team.gif.robot.Robot;
 import team.gif.robot.RobotMap;
 
 public class Talon extends SubsystemBase {
@@ -21,7 +22,11 @@ public class Talon extends SubsystemBase {
         talonSRX.setNeutralMode(NeutralMode.Brake);
     }
     public void turnMotor(double percentOutput){
-        talonSRX.set(TalonSRXControlMode.PercentOutput, percentOutput);
+        if(Robot.limitSwitch.getLimitSwitchInput()){
+            talonSRX.set(TalonSRXControlMode.PercentOutput, percentOutput/2);
+        }
+        else
+            talonSRX.set(TalonSRXControlMode.PercentOutput, percentOutput);
     }
 
 }
