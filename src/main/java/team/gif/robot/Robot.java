@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import team.gif.robot.commands.JoystickMotorControl;
+import team.gif.robot.subsystems.Pneumatics;
 import team.gif.robot.subsystems.SparkMAXMotorControl;
 import team.gif.robot.subsystems.Talon;
 import team.gif.robot.subsystems.drivers.Pigeon;
@@ -36,6 +37,9 @@ public class Robot extends TimedRobot {
 
   public static final boolean enableSwerveDebug = false;
 
+  public static Pneumatics pneumatics;
+
+
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -54,6 +58,8 @@ public class Robot extends TimedRobot {
 
     talon = new Talon();
     talon.setDefaultCommand(new JoystickMotorControl());
+
+    pneumatics = new Pneumatics();
 
     //These should be at or near the bottom
     oi = new OI();
