@@ -91,10 +91,12 @@ public class OI {
          *   aX.onTrue(new PrintCommand("aX"));
          */
 
-        dA.onTrue(new GetFPGATimeStamp());
+//        dA.onTrue(new GetFPGATimeStamp());
         dB.whileTrue(new TalonMotorSpinBackwards());
         dX.whileTrue(new TalonMotorSpinForwards());
         dY.whileTrue(new SparkMAXSetVoltage());
+        dA.whileTrue(new SparkMAXSetVoltage());
+
 
 
     }
