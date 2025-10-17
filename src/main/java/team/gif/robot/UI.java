@@ -18,6 +18,7 @@ public class UI {
         ShuffleboardTab tab = Shuffleboard.getTab("BAB-2025");
         tab.addBoolean("LS State", Robot.limitSwitch::getLimitSwitchInput);
         Robot.pigeon.addToShuffleboard("BAB-2025", "Pigeon Headiing");
+        tab.addDouble("NEO RPM", Robot.sparkMAX::getRPM);
     }
 
     /**
