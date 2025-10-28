@@ -17,7 +17,7 @@ public class Talon extends SubsystemBase {
     private TalonSRX talonSRX;
 
     public Talon() {
-        talonSRX = new TalonSRX(RobotMap.WINCH_MOTOR_ID);
+        talonSRX = new TalonSRX(RobotMap.TALON_ID);
         talonSRX.configFactoryDefault();
         talonSRX.setNeutralMode(NeutralMode.Brake);
     }

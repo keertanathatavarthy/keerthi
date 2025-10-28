@@ -18,15 +18,17 @@ import team.gif.robot.RobotMap;
 
 import static edu.wpi.first.units.Units.RPM;
 
+
+//Class name shouldn't have all capitals. PascalCase, first letter of every word is capitalized
 public class SparkMAXMotorControl extends SubsystemBase {
     private SparkMax sparkMax;
     private SparkClosedLoopController sparkPID;
-    private RelativeEncoder encoder;
+    private RelativeEncoder neoEncoder; //encoder of what? (Hint: what kind of motor is the encoder in?)
 
 
     public SparkMAXMotorControl() {
         sparkMax = new SparkMax(RobotMap.SPARKMAX_ID, SparkLowLevel.MotorType.kBrushless);
-        encoder = sparkMax.getEncoder();
+        neoEncoder = sparkMax.getEncoder();
         sparkPID = sparkMax.getClosedLoopController();
 
         SparkMaxConfig config = new SparkMaxConfig();
@@ -45,7 +47,7 @@ public class SparkMAXMotorControl extends SubsystemBase {
     }
 
     public double getRPM(){
-        return encoder.getVelocity();
+        return neoEncoder.getVelocity();
     }
 
 }

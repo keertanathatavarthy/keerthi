@@ -8,7 +8,7 @@ public class TalonMotorSpinForwards extends Command {
 
     public TalonMotorSpinForwards() {
         super();
-        addRequirements(Robot.talon); // uncomment
+        addRequirements(Robot.talon);
 
 
     }

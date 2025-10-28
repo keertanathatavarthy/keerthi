@@ -23,11 +23,13 @@ import team.gif.robot.subsystems.LimitSwitch;
 public class Robot extends TimedRobot {
   private static Command autonomousCommand;
   private RobotContainer robotContainer;
+
   public static OI oi;
 
   public static LimitSwitch limitSwitch;
 
   public static Pigeon pigeon;
+
   public static Talon talon;
 
   public static UI ui;
@@ -62,9 +64,7 @@ public class Robot extends TimedRobot {
     pneumatics = new Pneumatics();
 
     //These should be at or near the bottom
-    oi = new OI();
-    ui = new UI();
-
+  
   }
 
   /**
@@ -136,4 +136,8 @@ public class Robot extends TimedRobot {
   /** This function is called periodically whilst in simulation. */
   @Override
   public void simulationPeriodic() {}
+
+    oi = new OI();
+    ui = new UI();
+
 }
